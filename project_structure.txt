@@ -1,0 +1,119 @@
+Folder PATH listing for volume Blade 15 SSD
+Volume serial number is 121B-2002
+C:.
+¦   .gitignore
+¦   posh_helper_functions.py
+¦   project_structure.txt
+¦   README.md
+¦   Shopify_to_Posh.ipynb
+¦   tree.txt
+¦   
++---ebay-api
+¦   ¦   config.json
+¦   ¦   console.py
+¦   ¦   README.md
+¦   ¦   requirements.txt
+¦   ¦   
+¦   +---cloud-callback-oauth-customer
+¦   ¦       index.js
+¦   ¦       package.json
+¦   ¦       
+¦   +---cloud-ebay-account-deletion-notifications
+¦   ¦       main.py
+¦   ¦       requirements.txt
+¦   ¦       
+¦   +---ebay_upload_listings
+¦   ¦   +---ebay_client_scopes_oauth
+¦   ¦       ¦   oauth_workflow.py
+¦   ¦       ¦   requirements.txt
+¦   ¦       ¦   __init__.py
+¦   ¦       ¦   
+¦   ¦       +---deletion
+¦   ¦       ¦       delete_inventory_item.py
+¦   ¦       ¦       delete_offer.py
+¦   ¦       ¦       test.txt
+¦   ¦       ¦       
+¦   ¦       +---policies
+¦   ¦       ¦   ¦   create_payment_policy.py
+¦   ¦       ¦   ¦   create_return_policy.py
+¦   ¦       ¦   ¦   get_fullfilment_policy.py
+¦   ¦       ¦   ¦   get_payment_policy.py
+¦   ¦       ¦   ¦   get_return_policy.py
+¦   ¦       ¦   ¦   get_shipping_policy.py
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---__pycache__
+¦   ¦       ¦           get_fullfilment_policy.cpython-311.pyc
+¦   ¦       ¦           get_payment_policy.cpython-311.pyc
+¦   ¦       ¦           get_return_policy.cpython-311.pyc
+¦   ¦       ¦           
+¦   ¦       +---__pycache__
+¦   ¦               __init__.cpython-311.pyc
+¦   ¦               
+¦   +---image_upload
+¦   ¦   ¦   .env
+¦   ¦   ¦   check_for_new_records.py
+¦   ¦   ¦   keen-snow-373818-3e30ddba2a2e.json
+¦   ¦   ¦   mongo_db_urls.py
+¦   ¦   ¦   requirements.txt
+¦   ¦   ¦   sample.png
+¦   ¦   ¦   upload_binary_image.py
+¦   ¦   ¦   upload_external_imageURL.py
+¦   ¦   ¦   urls_from_bq.py
+¦   ¦   ¦   utils.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           check_for_new_records.cpython-311.pyc
+¦   ¦           upload_binary_image.cpython-311.pyc
+¦   ¦           upload_external_imageURL.cpython-311.pyc
+¦   ¦           utils.cpython-311.pyc
+¦   ¦           
+¦   +---retrieve_refresh_token_mongo
+¦   ¦   ¦   get_access_token.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           get_access_token.cpython-311.pyc
+¦   ¦           __init__.cpython-311.pyc
+¦   ¦           
+¦   +---upload_client_items
+¦   ¦   ¦   bulk_create_inventory_items.py
+¦   ¦   ¦   bulk_create_offer.py
+¦   ¦   ¦   create_inventory_locations.py
+¦   ¦   ¦   create_replace_inventory_item_group.py
+¦   ¦   ¦   get_inventory_group.py
+¦   ¦   ¦   get_inventory_item.py
+¦   ¦   ¦   get_inventory_locations.py
+¦   ¦   ¦   get_offer.py
+¦   ¦   ¦   publish_inventory_offer.py
+¦   ¦   ¦   publish_offer.py
+¦   ¦   ¦   update_offer.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           bulk_create_inventory_items.cpython-311.pyc
+¦   ¦           bulk_create_offer.cpython-311.pyc
+¦   ¦           create_inventory_locations.cpython-311.pyc
+¦   ¦           create_replace_inventory_item_group.cpython-311.pyc
+¦   ¦           get_inventory_locations.cpython-311.pyc
+¦   ¦           publish_inventory_offer.cpython-311.pyc
+¦   ¦           __init__.cpython-311.pyc
+¦   ¦           
+¦   +---__pycache__
+¦           console.cpython-311.pyc
+¦           
++---ebay-csv
+¦   ¦   eBay_CSV_Bulk_Upload.ipynb
+¦   ¦   
+¦   +---artifacts
+¦           ebay_listing_template_fields.csv
+¦           itl_to_ebay_attribute_mapping_bottoms.json
+¦           itl_to_ebay_attribute_mapping_dresses.json
+¦           itl_to_ebay_attribute_mapping_general.json
+¦           itl_to_ebay_attribute_mapping_skirts.json
+¦           itl_to_ebay_attribute_mapping_tops.json
+¦           itl_to_ebay_category_type_mappings.csv
+¦           
++---vendoo-csv
+        Shopify_to_Vendoo.ipynb
+        vendoo_helper_functions.py
+        
