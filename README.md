@@ -2,11 +2,31 @@
 
 Automated integration for managing eBay store inventory, offers, and publishing processes.
 
-## Built With
+## What will you be able to with it
 
-- Python
-- requests
-- pymongo
+This repo was created with the intention of helping any developer that needs to make an ebay integration through python to upload listings successfully and efficiently to eBay, using ebay api calls and OAUTH. 
+It will allow you to tailor all your items with every detail and then just run the pipeline and everything will be uploaded and posted.
+
+1. Upload clothing items to ebay seller platform, rangin from single items to many items as a group offer
+![image](https://github.com/user-attachments/assets/9ebf2e5e-99be-47a5-891e-9039d1bcf6ec)
+![image](https://github.com/user-attachments/assets/cbd5ce3a-7dc2-41fa-a716-b7168a880abb)
+
+2. It will also allow you to use html code to create attractive descriptions and modify them how you want
+![image](https://github.com/user-attachments/assets/f3f7903a-0525-40ef-9564-32a297c16423)
+
+## Quickstart
+1. We start off by getting the user's access token so we can use it for all the api calls
+2. Then we can decide if we need to use the EPS or not
+3. Extract the merchant location keys
+4. Retrieve the account's policies ids
+5. Create the inventory items
+6. Create the inventory Group
+7. Create the offer for the inventory items
+8. Publish the offer
+
+When succesfully running the pipeline, you will see something like this in the console
+![image](https://github.com/user-attachments/assets/41e8e557-4ab1-4f1a-9e5e-44e664fb8260)
+
 
 ## Getting Started
 
@@ -25,16 +45,15 @@ Before you begin, ensure you have the following:
 
 ### Installation
 
+
 1. **Clone the repository:**
-   \```bash
+   ```bash
    git clone <repository-url>
    cd ebay-api
-   \```
 
 2. **Install required Python packages:**
-   \```bash
+   ```bash
    pip install -r requirements.txt
-   \```
 
 3. **Configuration:**
    Ensure your `config.json` is properly configured with the correct eBay API credentials and redirect URIs:
