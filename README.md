@@ -7,12 +7,25 @@ Automated integration for managing eBay store inventory, offers, and publishing 
 This repo was created with the intention of helping any developer that needs to make an ebay integration through python to upload listings successfully and efficiently to eBay, using ebay api calls and OAUTH. 
 It will allow you to tailor all your items with every detail and then just run the pipeline and everything will be uploaded and posted.
 
-1. Upload clothing items to ebay seller platform, rangin from single items to many items as a group offer
+### 1. Upload clothing items to ebay seller platform, rangin from single items to many items as a group offer
 ![image](https://github.com/user-attachments/assets/9ebf2e5e-99be-47a5-891e-9039d1bcf6ec)
 ![image](https://github.com/user-attachments/assets/cbd5ce3a-7dc2-41fa-a716-b7168a880abb)
 
-2. It will also allow you to use html code to create attractive descriptions and modify them how you want
+### 2. It will also allow you to use html code to create attractive descriptions and modify them how you want
 ![image](https://github.com/user-attachments/assets/f3f7903a-0525-40ef-9564-32a297c16423)
+
+### 3. Apart from the main functionality, I have integrated additional API calls for you to use:
+- Update offers
+- Get inventory group/inventory item/inventory location/offer
+- Delete inventory item/offer
+- Create payment/return policies
+
+### 4. Additionally:
+- Incorporated eBay account deletion notifications (mandatory as per eBay requirements)
+- Added a cloud function callback connected to MongoDB. Initially used in Google Cloud Functions, but the code is compatible with other cloud services like AWS.
+
+
+
 
 ## Quickstart
 1. We start off by getting the user's access token so we can use it for all the api calls
