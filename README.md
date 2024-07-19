@@ -188,7 +188,7 @@ Inside `console.py`:
 
 ### Compliance: Account Deletion Notifications
 
-Currently hosted on [Google Cloud Functions](https://console.cloud.google.com/functions/details/us-central1/ebay-account-deletion-notifications?env=gen2&project=keen-snow-373818&tab=metrics).
+Currently hosted on Google Cloud Functions
 
 
 ## Considerations
