@@ -2,68 +2,63 @@
 
 Automated integration for managing eBay store inventory, offers, and publishing processes.
 
-## What will you be able to with it
+## Capabilities
 
-This repo was created with the intention of helping any developer that needs to make an ebay integration through python to upload listings successfully and efficiently to eBay, using ebay api calls and OAUTH. 
-It will allow you to tailor all your items with every detail and then just run the pipeline and everything will be uploaded and posted.
+This repository facilitates eBay integration through Python, allowing for the successful and efficient upload of listings to eBay using eBay API calls and OAuth. The tool enables detailed customization of items, with the ability to run the pipeline for automatic upload and posting.
 
-### 1. Upload clothing items to ebay seller platform, rangin from single items to many items as a group offer
+### 1. Upload Clothing Items to the eBay Seller Platform, Ranging from Single Items to Multiple Items as a Group Offer
 ![image](https://github.com/user-attachments/assets/9ebf2e5e-99be-47a5-891e-9039d1bcf6ec)
 ![image](https://github.com/user-attachments/assets/cbd5ce3a-7dc2-41fa-a716-b7168a880abb)
 
-### 2. It will also allow you to use html code to create attractive descriptions and modify them how you want
+### 2. Use HTML Code to Create and Modify Attractive Descriptions
 ![image](https://github.com/user-attachments/assets/f3f7903a-0525-40ef-9564-32a297c16423)
 
-### 3. Apart from the main functionality, I have integrated additional API calls for you to use:
+### 3. Additional API Calls Included:
 - Update offers
-- Get inventory group/inventory item/inventory location/offer
-- Delete inventory item/offer
-- Create payment/return policies
+- Retrieve inventory group, inventory item, inventory location, or offer
+- Delete inventory item or offer
+- Create payment or return policies
 
-### 4. Additionally:
+### 4. Additional Features:
 - Incorporated eBay account deletion notifications (mandatory as per eBay requirements)
 - Added a cloud function callback connected to MongoDB. Initially used in Google Cloud Functions, but the code is compatible with other cloud services like AWS.
 
-
-
-
 ## Quickstart
-1. We start off by getting the user's access token so we can use it for all the api calls
-2. Then we can decide if we need to use the EPS or not
-3. Extract the merchant location keys
-4. Retrieve the account's policies ids
-5. Create the inventory items
-6. Create the inventory Group
-7. Create the offer for the inventory items
-8. Publish the offer
 
-When succesfully running the pipeline, you will see something like this in the console
+1. Obtain the user's access token to use for all API calls.
+2. Decide whether the EPS (eBay Photo Services) is needed.
+3. Extract the merchant location keys.
+4. Retrieve the account's policy IDs.
+5. Create the inventory items.
+6. Create the inventory group.
+7. Create the offer for the inventory items.
+8. Publish the offer.
+
+When the pipeline runs successfully, the console will display output similar to the following:
 ![image](https://github.com/user-attachments/assets/41e8e557-4ab1-4f1a-9e5e-44e664fb8260)
-
 
 ## Getting Started
 
-To get a local copy up and running, follow these steps:
+To set up a local copy, follow these steps:
 
 ### Prerequisites
 
-Before you begin, ensure you have the following:
+Before beginning, ensure the following requirements are met:
 
 - Python 3.8 or higher installed.
 - `requests` and `pymongo` libraries installed.
-- [Created developer account](https://developer.ebay.com/join)
-- Once you have created your developer account you should be able to see your [credentials here](https://developer.ebay.com/my/keys)
-- Normal account as seller on ebay
-- A `config.json` file in your project directory containing eBay API credentials and other necessary configuration details.
+- [Developer account created](https://developer.ebay.com/join)
+- Once the developer account is created, [view credentials here](https://developer.ebay.com/my/keys).
+- A seller account on eBay.
+- A `config.json` file in the project directory containing eBay API credentials and other necessary configuration details.
 
 ### Installation
-
 
 1. **Clone the repository:**
    ```bash
    git clone <repository-url>
    cd ebay-api
-
+   
 2. **Install required Python packages:**
    ```bash
    pip install -r requirements.txt
@@ -82,11 +77,11 @@ Before you begin, ensure you have the following:
 
 To interact with a customer's eBay store, we use the [Authorization Code Grant Flow](https://developer.ebay.com/api-docs/static/oauth-authorization-code-grant.html):
 
-1. The customer goes to a specific eBay link to authenticate and gets redirected to our app.
-2. We store the authorization code from the customer and exchange it for a refresh token in our database. (User tokens are short-lived; refresh tokens are long-lived, expiring in 18 months.)
-3. Our process is divided into two services:
-   - The first service obtains and securely stores the authorization code.
-   - The second service uses the stored authorization code to retrieve an access token for future API calls.
+1. The customer authenticates via a specific eBay link and is redirected to the application.
+2. The authorization code from the customer is stored and exchanged for a refresh token in the database. (User tokens are short-lived; refresh tokens are long-lived, expiring in 18 months.)
+3. The process is divided into two services:
+- The first service obtains and securely stores the authorization code.
+- The second service uses the stored authorization code to retrieve an access token for future API calls.
 
 ### Inventory and Listing
 
@@ -97,9 +92,9 @@ Before running the pipeline, follow these steps:
 
 Inside `console.py`:
 
-3. Ensure the `user_name` is filled and corresponds to a user stored in MongoDB.
+3. Ensure the `user_name` field is populated and corresponds to a user stored in MongoDB.
 
-4. Fill the `items` variable with valid SKU, locale, and product details. The `product` key should have descriptions, including aspects such as:
+4. Fill the `items` variable with valid SKU, locale, and product details. The `product` key should include descriptions covering aspects such as:
    - brand
    - country of manufacture
    - type
@@ -120,9 +115,9 @@ Inside `console.py`:
      "Size": ["Large", "Small"]
    }
    ```
-   will cause an error and break the pipeline.
+  will cause an error and disrupt the pipeline.
 
-   Note: The description at this level can be omitted, as it will be filled later when creating the inventory item group, similar to the `imageUrls` key.
+  Note: The description at this level can be omitted, as it will be provided later when creating the inventory item group, similar to the `imageUrls` key.
 
    `condition` and `conditionDescription` are optional but recommended.
 
@@ -184,8 +179,8 @@ Inside `console.py`:
 
 8. Fill the `categoryId` and `merchantLocationKey` inside Bulk_offer (either specific location or "DISABLED").
 
-9. Run the pipeline at ebay-api level with the command python -m console. Here, after it retrieves the token is going to ask if you need to use eBays EPS system, if you need to use ebay's EPS you will be prompted to write the urls separated by commas. Remember the urls need to use http and they have requirements on the size as well. For more information on this topic you can visit [eBay EPS](https://developer.ebay.com/devzone/xml/docs/Reference/eBay/UploadSiteHostedPictures.html). If you do not want to use ebay EPS you want to go into the variable call "data" and hardcode the url links inside the ImageUrl key.
-
+9. Run the pipeline at the ebay-api level with the command python -m console. After retrieving the token, the system will prompt whether to use eBay's EPS system. If EPS is required, URLs separated by commas will need to be provided. The URLs must use HTTP and adhere to specific size requirements. For more information, visit [eBay EPS](https://developer.ebay.com/devzone/xml/docs/Reference/eBay/UploadSiteHostedPictures.html).If EPS is not used, hardcode the URL links inside the ImageUrl key in the data variable.
+   
 ### Compliance: Account Deletion Notifications
 
 Currently hosted on Google Cloud Functions
